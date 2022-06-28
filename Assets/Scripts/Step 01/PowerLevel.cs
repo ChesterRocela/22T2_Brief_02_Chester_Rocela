@@ -31,16 +31,18 @@ public class PowerLevel : MonoBehaviour
     /// <param name="myPowerLevel"></param>
     /// <param name="opponentPowerLevel"></param>
     /// <returns></returns>
-    public float ReturnChanceToWin(int myPowerLevel,int opponentPowerLevel)
+    public float ReturnChanceToWin(int myPowerLevel, int opponentPowerLevel)
     {
         // let's first calculate the total power level overall.
         int totalPower = myPowerLevel + opponentPowerLevel;
 
         // Then let's then do a fraction of my power level and the overall power level.
-        
-        // This will give us a decimal number, i.e. 3/4 will give us 0.75 we probably want to turn that into the percentage value.
 
-        return 0; // Instead of returning 0 here we probably want to return our percentage chance to win.
+        // This will give us a decimal number, i.e. 3/4 will give us 0.75 we probably want to turn that into the percentage value.
+        float myChanceToWin = (float)myPowerLevel / (float)totalPower * 100;
+
+        Debug.Log(myChanceToWin + "");
+        return myChanceToWin; // Instead of returning 0 here we probably want to return our percentage chance to win.
     }
 
     #region NoModificationsRequired
