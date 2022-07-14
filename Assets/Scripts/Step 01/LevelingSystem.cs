@@ -25,9 +25,15 @@ public class LevelingSystem : MonoBehaviour
     {
         // set our current level to 1
 
+        int currentLevel = 1;
+
         // set our current XP to zero
 
+        int currentXp = 0;
+
         // set our current XP Threshold to be our level multiplied by our 100.
+
+        int currentXPThreshold = currentLevel * 100; 
 
     }
 
@@ -39,9 +45,15 @@ public class LevelingSystem : MonoBehaviour
     {
         // We want to be able to add on the xpGained onto our currentXp.
 
+       // int xpGained =
+
         // We probably want to check to see if we've gained enough xp to trigger a level up to occur.
 
+
+
         // if we do then let's call our level up function.
+
+
     }
 
     /// <summary>
