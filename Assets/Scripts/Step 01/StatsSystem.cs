@@ -70,6 +70,7 @@ public class StatsSystem : MonoBehaviour
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
 
         float luck = intelligence * 1.5f;
+        
 
         // rhythm should be based off our agility and be converted at a rate of 1 : 0.5.
 
