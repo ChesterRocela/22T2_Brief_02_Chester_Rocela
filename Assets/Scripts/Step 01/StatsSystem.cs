@@ -62,19 +62,18 @@ public class StatsSystem : MonoBehaviour
         Debug.Log("agilMulti = " + agilityMultiplier + " strMulti = " + strengthMultiplier + " intelMulti = " + intelligenceMultiplier);
 
         // now that we have some stats and our multiplier values let's calculate our style, luck and ryhtmn based on these values, hint your going to need to convert ints to floats, then floats to ints.
-        
+
         // style should be based off our strength and be converted at a rate of 1 : 1.
 
-        int style = strength;
+        int style =(int)((float)(int)strength * 1);
 
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
 
-        float luck = intelligence * 1.5f;
-        
+        float luck = (int)((float)(int)intelligence * 1.5f);
 
         // rhythm should be based off our agility and be converted at a rate of 1 : 0.5.
 
-        float rhythm = agility * 0.5f;
+        float rhythm = (int)((float)(int)agility * 0.5f);
     }
 
     /// <summary>
@@ -84,9 +83,11 @@ public class StatsSystem : MonoBehaviour
     public void ChangeHealth(float amount)
     {
         // We probably want to change our current health based on the amount coming in.
+        
+        playerHealth = amount + 100f;
 
         // currently we are just automatically removing our player...but we probably only want to do that if there is a character and their health is less than 0.
-        if(character != null)
+        if (character != null)
         {
             character.RemoveFromTeam();
         }
@@ -100,6 +101,13 @@ public class StatsSystem : MonoBehaviour
         // we've been granted some more points to increase our stats by.
         // let's share these points somewhat evenly or based on some formula to increase our current physical stats
         // then let's recalculate our dancing stats again to process and update the new values.
+       
+        strength = strength + PointsPool / 3;
+
+        agility = agility + PointsPool / 3;
+
+        intelligence = intelligence + PointsPool / 3;
+
 
     }
 

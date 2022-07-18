@@ -45,10 +45,11 @@ public class LevelingSystem : MonoBehaviour
     {
         // We want to be able to add on the xpGained onto our currentXp.
 
-       // int xpGained =
+        currentXp = currentXp + xpGained;
+
+        Debug.Log("XpGained" + " " + currentXp);
 
         // We probably want to check to see if we've gained enough xp to trigger a level up to occur.
-
 
 
         // if we do then let's call our level up function.
