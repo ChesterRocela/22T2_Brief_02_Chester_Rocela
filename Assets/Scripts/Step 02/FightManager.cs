@@ -32,6 +32,26 @@ public class FightManager : MonoBehaviour
         // we should also do some damage or heal the appropriate characters.
         // we could also give them some XP if we want to. 
         // so we have the character class, which means any variables,references and functions we can access.
+        if (playerOnePowerLevel > playerTwoPowerLevel)
+        {
+            teamBCharacter.myStatsSystem.ChangeHealth(playerTwoPowerLevel);
+
+            teamACharacter.myStatsSystem.DistributePhysicalStatsOnLevelUp(playerTwoPowerLevel);
+
+            teamACharacter.myLevelSystem.AddXP(playerOnePowerLevel);
+
+            Debug.Log("Winner:" + " " + "Player One");
+        }
+        else
+        {
+            teamACharacter.myStatsSystem.ChangeHealth(playerOnePowerLevel);
+
+            teamBCharacter.myStatsSystem.DistributePhysicalStatsOnLevelUp(playerOnePowerLevel);
+
+            teamBCharacter.myLevelSystem.AddXP(playerTwoPowerLevel);
+
+            Debug.Log("Winner:" + " " + "Player Two");
+        }
 
         // By default it will automatically be a draw.
         string battleMessage = teamACharacter.charName.GetFullCharacterName() + " " + teamBCharacter.charName.GetFullCharacterName() + " fight is a draw";
