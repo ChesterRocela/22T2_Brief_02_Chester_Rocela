@@ -24,10 +24,7 @@ public class PowerLevel : MonoBehaviour
 
         float playerPowerLevel = (myLuck + myStyle + myRhthm);
 
-        // instead of returning 0 we probably want to return our current power level
-
-        return 
-
+        return 0 // instead of returning 0 we probably want to return our current power level
 
     }
 
@@ -40,13 +37,13 @@ public class PowerLevel : MonoBehaviour
     public float ReturnChanceToWin(int myPowerLevel, int opponentPowerLevel)
     {
         // let's first calculate the total power level overall.
-       
+
         int totalPower = myPowerLevel + opponentPowerLevel;
 
         // Then let's then do a fraction of my power level and the overall power level.
 
         // This will give us a decimal number, i.e. 3/4 will give us 0.75 we probably want to turn that into the percentage value.
-        
+
         float myChanceToWin = (float)myPowerLevel / (float)totalPower * 100;
 
         Debug.Log(myChanceToWin + "");
@@ -59,7 +56,7 @@ public class PowerLevel : MonoBehaviour
     {
         int opponentPower = Random.Range(0, 20);
         int myPowerLevel = ReturnMyDancePowerLevel();
-          
+
         float myChanceToWin = ReturnChanceToWin(myPowerLevel, opponentPower);
         float myOpponentChanceToWin = ReturnChanceToWin(opponentPower, myPowerLevel);
 
