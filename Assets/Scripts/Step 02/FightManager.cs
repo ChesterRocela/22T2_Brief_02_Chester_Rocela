@@ -32,6 +32,7 @@ public class FightManager : MonoBehaviour
         // we should also do some damage or heal the appropriate characters.
         // we could also give them some XP if we want to. 
         // so we have the character class, which means any variables,references and functions we can access.
+        
         if (playerOnePowerLevel > playerTwoPowerLevel)
         {
             teamBCharacter.myStatsSystem.ChangeHealth(playerTwoPowerLevel);
@@ -40,9 +41,9 @@ public class FightManager : MonoBehaviour
 
             teamACharacter.myLevelSystem.AddXP(playerOnePowerLevel);
 
-            Debug.Log("Winner:" + " " + "Player One");
+            Debug.Log("Player 1 WINS");
         }
-        else
+        else if (playerTwoPowerLevel > playerOnePowerLevel)
         {
             teamACharacter.myStatsSystem.ChangeHealth(playerOnePowerLevel);
 
@@ -50,7 +51,7 @@ public class FightManager : MonoBehaviour
 
             teamBCharacter.myLevelSystem.AddXP(playerTwoPowerLevel);
 
-            Debug.Log("Winner:" + " " + "Player Two");
+            Debug.Log("Player 2 WINS");
         }
 
         // By default it will automatically be a draw.
@@ -60,9 +61,13 @@ public class FightManager : MonoBehaviour
         // Logs out the message to our console         
         
         BattleLog.Log(battleMessage, drawCol);
+
         BattleLog.Log("team A draw", teamAColour);
+
         BattleLog.Log("team B draw", teamBColour);
+       
         // here we are just telling the system who has won, and who has lost; for any other result other than a draw we should probably pass in false.
+
         FightCompleted(teamBCharacter, teamACharacter, true);
         
     }

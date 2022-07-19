@@ -89,8 +89,8 @@ public class StatsSystem : MonoBehaviour
     public void ChangeHealth(float amount)
     {
         // We probably want to change our current health based on the amount coming in.
-        
-        playerHealth = amount + 100f;
+
+        playerHealth -= amount;
 
         // currently we are just automatically removing our player...but we probably only want to do that if there is a character and their health is less than 0.
         if (character != null)

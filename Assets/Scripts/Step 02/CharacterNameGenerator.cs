@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -16,13 +17,14 @@ public class CharacterNameGenerator : MonoBehaviour
     [Header("Possible last names")]
     private List<string> lastNames = new List<string>(); // a list of all possible last names for us to use.
     [Header("Possible nicknames")]
-    private List<string> nicknames = new List<string>(); // a list of all possible nick names for us to use.
+    private List<string> nickNames = new List<string>(); // a list of all possible nick names for us to use.
 
 
     private void Awake()
     {
         // call the create names function
         CreateNames();
+     
     }
 
     /// <summary>
@@ -40,11 +42,9 @@ public class CharacterNameGenerator : MonoBehaviour
         lastNames.Add("Allen");
         lastNames.Add("Jordan");
 
-        nicknames.Add("Melo Jelo");
-        nicknames.Add("Sharp Shooter");
-        nicknames.Add("The Legend");
-
-
+        nickNames.Add("player");
+        nickNames.Add("player");
+        nickNames.Add("player");
     }
 
     /// <summary>
@@ -54,9 +54,10 @@ public class CharacterNameGenerator : MonoBehaviour
     public void SetIndividualCharacter(CharacterName character)
     {
         // So here rather than each character being called Blanky Blank Blank, we probably want it to be a random first,last and nickname
-  
-       
 
+        string characterName = firstNames[Random.Range(1, firstNames.Count)] + " " +  lastNames[Random.Range(1, lastNames.Count)] + " " +  nickNames[Random.Range(1, lastNames.Count)];
+       
+        Debug.Log(characterName);
 
     }
         /// <summary>
@@ -70,5 +71,6 @@ public class CharacterNameGenerator : MonoBehaviour
         // we should probably loop over that list of charcter names, and then for each chacter set thei first, last and nickname a random one from our lists
         // if you want to get fancy you could use another function within this script to help out here.
 
+        
     }
 }

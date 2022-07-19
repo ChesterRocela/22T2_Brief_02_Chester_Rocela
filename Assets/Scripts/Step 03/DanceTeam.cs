@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,12 @@ public class DanceTeam : MonoBehaviour
     public Text troupeNameText; // this is just a text element in the scene that set by the troupe name function.
 
     public List<Character> allDancers = new List<Character>(); // A list of all the dancers on our team.
+
+    internal static void SetTroupeName(DanceTeam teamA)
+    {
+        throw new NotImplementedException();
+    }
+
     public List<Character> activeDancers = new List<Character>(); // A list of our currently active dancers, when they die they need to be removed from this list. 
     public List<Transform> characterSpawnPoints = new List<Transform>(); // these will be the spawn points for the characters
 
@@ -33,7 +40,9 @@ public class DanceTeam : MonoBehaviour
         List<CharacterName> allCharacterNames = new List<CharacterName>(); // a list to hold all our character name references.
 
         // so here we want to be able to loop over all of our character spawn points.
-      
+
+        Instantiate (dancerPrefab, new Vector3(0.0f, 0.0f, 0.0f),Quaternion.identity);
+     
             // for each spawn point, we want to use our Instantiate(Gameobject, Vector3, Quaternion); and pass in our dancer prefab, as well as the position and rotation of the spawn point
             // Once that does occur, we should store what was spawned into a gameobject for use later on.
             GameObject clone = null;
