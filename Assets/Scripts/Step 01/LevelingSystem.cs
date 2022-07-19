@@ -25,15 +25,15 @@ public class LevelingSystem : MonoBehaviour
     {
         // set our current level to 1
 
-        int currentLevel = 1;
+         currentLevel = 1;
 
         // set our current XP to zero
 
-        int currentXp = 0;
+         currentXp = 0;
 
         // set our current XP Threshold to be our level multiplied by our 100.
 
-        int currentXPThreshold = currentLevel * 100; 
+         currentXPThreshold = (currentLevel * 100); 
 
     }
 
@@ -45,16 +45,15 @@ public class LevelingSystem : MonoBehaviour
     {
         // We want to be able to add on the xpGained onto our currentXp.
 
-        currentXp = currentXp + xpGained;
-
-        Debug.Log("XpGained" + " " + currentXp);
+        currentXp = (currentXp + xpGained);
 
         // We probably want to check to see if we've gained enough xp to trigger a level up to occur.
-
-
-
         // if we do then let's call our level up function.
-
+        
+        if (currentXp >= currentXPThreshold)
+        {
+            LevelUp();
+        }
 
     }
 
@@ -64,6 +63,8 @@ public class LevelingSystem : MonoBehaviour
     private void LevelUp()
     {
         // So let's increase our current level, but let's also recalculate our XP threshold to take into account the new level we've just gained. 
+        currentLevel += 1;
+        currentXPThreshold = (currentXPThreshold * 100);
     }
 
     #region No Mods Required.

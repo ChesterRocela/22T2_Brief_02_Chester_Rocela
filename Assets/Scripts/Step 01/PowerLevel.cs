@@ -20,11 +20,13 @@ public class PowerLevel : MonoBehaviour
         // let's set our player power levels, using an algorithm, the simpliest would be luck + style + rhythm
         int myLuck = myStats.luck;
         int myStyle = myStats.style;
-        int myRhthm = myStats.rhythm;
+        int myRhthm = myStats.rhythm;   
 
-        float playerPowerLevel = (myLuck + myStyle + myRhthm);
+         int playerPowerLevel = (myLuck + myStyle + myRhthm);
 
-        return 0; // instead of returning 0 we probably want to return our current power level
+        // instead of returning 0 we probably want to return our current power level
+
+        return myLuck + myStyle + myRhthm;
 
     }
 
@@ -41,12 +43,10 @@ public class PowerLevel : MonoBehaviour
         int totalPower = myPowerLevel + opponentPowerLevel;
 
         // Then let's then do a fraction of my power level and the overall power level.
-
         // This will give us a decimal number, i.e. 3/4 will give us 0.75 we probably want to turn that into the percentage value.
-
+        // Instead of returning 0 here we probably want to return our percentage chance to win.
+       
         float myChanceToWin = (float)myPowerLevel / (float)totalPower * 100;
-
-        Debug.Log(myChanceToWin + "");
 
         return myChanceToWin; // Instead of returning 0 here we probably want to return our percentage chance to win.
     }

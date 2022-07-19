@@ -11,12 +11,12 @@ using UnityEngine;
 /// </summary>
 public class StatsSystem : MonoBehaviour
 {
-    public float playerHealth = 0;
+    public float playerHealth = 0f;
 
     /// Our physical stats that determine our dancing stats.
-    public int agility = 1;
-    public int intelligence = 1;
-    public int strength = 1;
+    public int agility = 0;
+    public int intelligence = 0;
+    public int strength = 0;
 
     // Our variables used to determine our fighting power.
     public int style = 0;
@@ -33,12 +33,11 @@ public class StatsSystem : MonoBehaviour
     {
         // Let's set up agility, intelligence and strength to some default Random values.
         
-        int agility = Random.Range(0, 20);
+         agility = Random.Range(1, 13);
 
-        int intelligence = Random.Range(0, 20);
+         intelligence = Random.Range(1, 13);
 
-        int strength = Random.Range(0, 20);
-
+         strength = Random.Range(1, 13);
     }
 
     /// <summary>
@@ -47,6 +46,8 @@ public class StatsSystem : MonoBehaviour
     /// </summary>
     public void CalculateDancingStats()
     {
+        // create a agility multiplier should be set to 0.5
+        
         float agilityMultiplier = 0.5f;
         
         // create a strength multiplier should be set to 1
@@ -58,22 +59,27 @@ public class StatsSystem : MonoBehaviour
         float intelligenceMultiplier = 1.5f;
 
         // Debug out our current multiplier values.
-       
-        Debug.Log("agilMulti = " + agilityMultiplier + " strMulti = " + strengthMultiplier + " intelMulti = " + intelligenceMultiplier);
+
+        Debug.Log("agilMulti = " + " " + agilityMultiplier);
+
+        Debug.Log(" strMulti = " + " " + strengthMultiplier); 
+
+        Debug.Log("intelMulti = " + " " + intelligenceMultiplier);
 
         // now that we have some stats and our multiplier values let's calculate our style, luck and ryhtmn based on these values, hint your going to need to convert ints to floats, then floats to ints.
 
         // style should be based off our strength and be converted at a rate of 1 : 1.
 
-        int style =(int)((float)(int)strength * 1);
+         style = (int)((float)(int)strength * strengthMultiplier);
+        
 
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
 
-        float luck = (int)((float)(int)intelligence * 1.5f);
+         luck = (int)((float)(int)intelligence * intelligenceMultiplier);
 
         // rhythm should be based off our agility and be converted at a rate of 1 : 0.5.
 
-        float rhythm = (int)((float)(int)agility * 0.5f);
+         rhythm = (int)((float)(int)agility * agilityMultiplier);
     }
 
     /// <summary>
@@ -108,6 +114,13 @@ public class StatsSystem : MonoBehaviour
 
         intelligence = intelligence + PointsPool / 3;
 
+        // then let's recalculate our dancing stats again to process and update the new values.
+
+         rhythm = (int)((float)(int)agility * 0.5f);
+
+         style = (int)((float)(int)strength * 1);
+
+         luck = (int)((float)(int)intelligence * 1.5f);
 
     }
 
