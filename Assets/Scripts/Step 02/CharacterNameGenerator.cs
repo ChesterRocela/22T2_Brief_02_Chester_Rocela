@@ -32,6 +32,19 @@ public class CharacterNameGenerator : MonoBehaviour
     {
         // So here we would ideally want to be able to add some names to our first names, last names and nick names lists.
 
+        firstNames.Add("LaMelo");
+        firstNames.Add("Ray");
+        firstNames.Add("Michael");
+
+        lastNames.Add("Ball");
+        lastNames.Add("Allen");
+        lastNames.Add("Jordan");
+
+        nicknames.Add("Melo Jelo");
+        nicknames.Add("Sharp Shooter");
+        nicknames.Add("The Legend");
+
+
     }
 
     /// <summary>
@@ -41,14 +54,16 @@ public class CharacterNameGenerator : MonoBehaviour
     public void SetIndividualCharacter(CharacterName character)
     {
         // So here rather than each character being called Blanky Blank Blank, we probably want it to be a random first,last and nickname
+  
+       
+
 
     }
-
-    /// <summary>
-    /// sets a character name for each member of a team, this is in our part 03
-    /// </summary>
-    /// <param name="namesNeeded"></param>
-    /// <returns></returns>
+        /// <summary>
+        /// sets a character name for each member of a team, this is in our part 03
+        /// </summary>
+        /// <param name="namesNeeded"></param>
+        /// <returns></returns>
     public void SetTeamCharacterNames(List<CharacterName> teamCharacters)
     {
         // so here we have a list of character names coming in.

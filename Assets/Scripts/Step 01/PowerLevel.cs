@@ -24,7 +24,7 @@ public class PowerLevel : MonoBehaviour
 
         float playerPowerLevel = (myLuck + myStyle + myRhthm);
 
-        return 0 // instead of returning 0 we probably want to return our current power level
+        return 0; // instead of returning 0 we probably want to return our current power level
 
     }
 

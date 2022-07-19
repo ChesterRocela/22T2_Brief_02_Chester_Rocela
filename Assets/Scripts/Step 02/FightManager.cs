@@ -54,8 +54,11 @@ public class FightManager : MonoBehaviour
         }
 
         // By default it will automatically be a draw.
+        
         string battleMessage = teamACharacter.charName.GetFullCharacterName() + " " + teamBCharacter.charName.GetFullCharacterName() + " fight is a draw";
+        
         // Logs out the message to our console         
+        
         BattleLog.Log(battleMessage, drawCol);
         BattleLog.Log("team A draw", teamAColour);
         BattleLog.Log("team B draw", teamBColour);
