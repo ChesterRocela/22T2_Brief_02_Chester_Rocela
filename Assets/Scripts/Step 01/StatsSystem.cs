@@ -93,7 +93,7 @@ public class StatsSystem : MonoBehaviour
         playerHealth -= amount;
 
         // currently we are just automatically removing our player...but we probably only want to do that if there is a character and their health is less than 0.
-        if (character != null)
+        if (playerHealth < 0)
         {
             character.RemoveFromTeam();
         }
