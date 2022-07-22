@@ -40,7 +40,13 @@ public class DanceTeam : MonoBehaviour
         List<CharacterName> allCharacterNames = new List<CharacterName>(); // a list to hold all our character name references.
 
         // so here we want to be able to loop over all of our character spawn points.
+<<<<<<< HEAD
        
+=======
+
+        
+     
+>>>>>>> 77aff4ba3f037ca549db16b51156265fe05edc9c
             // for each spawn point, we want to use our Instantiate(Gameobject, Vector3, Quaternion); and pass in our dancer prefab, as well as the position and rotation of the spawn point
             // Once that does occur, we should store what was spawned into a gameobject for use later on.
             GameObject clone = null;
@@ -50,6 +56,7 @@ public class DanceTeam : MonoBehaviour
         Instantiate(dancerPrefab, new Vector3(-3f, 0.0f, 0.0f), Quaternion.LookRotation, new Vector3(90f, 0.0f, 0.0f));
         Instantiate(dancerPrefab, new Vector3(-6f, 0.0f, 0.0f), Quaternion.LookRotation, new Vector3(90f, 0.0f, 0.0f));
 
+<<<<<<< HEAD
         //Team B
         Instantiate(dancerPrefab, new Vector3(3f, 0.0f, 0.0f), Quaternion.LookRotation, new Vector3(0.0f, 0.0f, 0.0f));
         Instantiate(dancerPrefab, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.LookRotation, new Vector3(270f, 0.0f, 0.0f));
@@ -60,6 +67,12 @@ public class DanceTeam : MonoBehaviour
 
         // After our dancer clone is spawned, we should use a getcomponent on the dancer and store a reference to the charactername class.
         CharacterName clonedCharacterName = null;
+=======
+        Instantiate(dancerPrefab, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+
+            // After our dancer clone is spawned, we should use a getcomponent on the dancer and store a reference to the charactername class.
+            CharacterName clonedCharacterName = null;
+>>>>>>> 77aff4ba3f037ca549db16b51156265fe05edc9c
             // with that referecne let's add it to our list of all character names.
             allCharacterNames.Add(clonedCharacterName);
             

@@ -20,13 +20,13 @@ public class PowerLevel : MonoBehaviour
         // let's set our player power levels, using an algorithm, the simpliest would be luck + style + rhythm
         int myLuck = myStats.luck;
         int myStyle = myStats.style;
-        int myRhthm = myStats.rhythm;   
+        int myRhythm = myStats.rhythm;   
 
-         int playerPowerLevel = (myLuck + myStyle + myRhthm);
+         int playerPowerLevel = (myLuck + myStyle + myRhythm);
 
         // instead of returning 0 we probably want to return our current power level
 
-        return myLuck + myStyle + myRhthm;
+        return myLuck + myStyle + myRhythm;
 
     }
 

@@ -72,7 +72,6 @@ public class StatsSystem : MonoBehaviour
 
          style = (int)((float)(int)strength * strengthMultiplier);
         
-
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
 
          luck = (int)((float)(int)intelligence * intelligenceMultiplier);

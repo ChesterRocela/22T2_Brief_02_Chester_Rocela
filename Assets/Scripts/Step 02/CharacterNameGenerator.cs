@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -37,13 +37,19 @@ public class CharacterNameGenerator : MonoBehaviour
         firstNames.Add("LaMelo");
         firstNames.Add("Ray");
         firstNames.Add("Michael");
+        firstNames.Add("Lonzo");
+        firstNames.Add("Steph");
 
         lastNames.Add("Ball");
         lastNames.Add("Allen");
         lastNames.Add("Jordan");
+        lastNames.Add("Booker");
+        lastNames.Add("Curry");
 
         nickNames.Add("player");
         nickNames.Add("player");
+        nickNames.Add("player");
+        nickNames.Add("Player");
         nickNames.Add("player");
     }
 
@@ -70,7 +76,22 @@ public class CharacterNameGenerator : MonoBehaviour
         // so here we have a list of character names coming in.
         // we should probably loop over that list of charcter names, and then for each chacter set thei first, last and nickname a random one from our lists
         // if you want to get fancy you could use another function within this script to help out here.
-
         
+        for (int i = 0; i < firstNames.Count; i++)
+        {
+            string characterName = firstNames[Random.Range(1, 3)];
+            Debug.Log(characterName);
+        }
+        for (int i = 0; i < lastNames.Count; i++)
+        {
+            string characterName = lastNames[Random.Range(1, 3)];
+            Debug.Log(characterName); 
+        }
+        for (int i = 0; i < nickNames.Count; i++)
+        {
+            string characterName = nickNames[Random.Range(1, 3)];
+            Debug.Log(characterName);
+
+        }    
     }
 }
