@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -70,7 +70,6 @@ public class CharacterNameGenerator : MonoBehaviour
         // so here we have a list of character names coming in.
         // we should probably loop over that list of charcter names, and then for each chacter set thei first, last and nickname a random one from our lists
         // if you want to get fancy you could use another function within this script to help out here.
-
         
     }
 }
